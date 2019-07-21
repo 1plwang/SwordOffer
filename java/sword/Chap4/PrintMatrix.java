@@ -41,4 +41,19 @@ public class PrintMatrix {
         }
         return list;
     }
+
+    public static void main(String[] ars) {
+        PrintMatrix printMatrix = new PrintMatrix();
+        int[][] nums = new int[2][3];
+        int count = 0;
+        for (int i = 0; i<2; i++) {
+            for (int j = 0; j<3;j++) {
+                nums[i][j] = count;
+                count++;
+                System.out.print(count + " ");
+            }
+        }
+        ;
+        System.out.println(printMatrix.printMatrix(nums).toString());
+    }
 }

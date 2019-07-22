@@ -15,9 +15,7 @@ public class BinaryTreeLevelOrder {
 
         public TreeNode(int val) {
             this.val = val;
-
         }
-
     }
 
     public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
@@ -33,6 +31,7 @@ public class BinaryTreeLevelOrder {
             TreeNode node = queue.poll();
             list.add(node.val);
 
+            //offer(e):Adds the specified element as the tail (last element) of this list.
             if (node.left != null) queue.offer(node.left);
             if (node.right != null) queue.offer(node.right);
         }

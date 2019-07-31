@@ -29,14 +29,14 @@ public class MoreThanHalf {
      * 选择排名为k的元素,只是部分排序，时间复杂度为O(N)
      */
     private int select(int[] array, int k) {
-        int low = 0;
-        int high = array.length - 1;
-        // high==low时只有一个元素，不切分
-        while (high > low) {
-            int j = partition(array, low, high);
+        int start = 0;
+        int end = array.length - 1;
+        // start==end时只有一个元素，不切分
+        while (end > start) {
+            int j = partition(array, start, end);
             if (j == k) return array[k];
-            else if (j > k) high = j - 1;
-            else if (j < k) low = j + 1;
+            else if (j > k) end = j - 1;
+            else if (j < k) start = j + 1;
         }
 
         return array[k];
@@ -45,17 +45,17 @@ public class MoreThanHalf {
     /**
      * 快速排序的切分方法
      */
-    private int partition(int[] array, int low, int high) {
-        int i = low;
-        int j = high + 1;
-        int v = array[low];
+    private int partition(int[] array, int start, int end) {
+        int i = start;
+        int j = end + 1;
+        int v = array[start];
         while (true) {
-            while (array[++i] < v) if (i == high) break;
-            while (array[--j] > v) if (j == low) break;
+            while (array[++i] < v) if (i == end) break;
+            while (array[--j] > v) if (j == start) break;
             if (i >= j) break;
             swap(array, i, j);
         }
-        swap(array, low, j);
+        swap(array, start, j);
         return j;
     }
 
@@ -65,6 +65,11 @@ public class MoreThanHalf {
         array[j] = temp;
     }
 
+    /**
+     * 解法2
+     * @param array
+     * @return
+     */
     public int findNumMoreThanHalf(int[] array) {
         if (array == null || array.length == 0) return 0;
 

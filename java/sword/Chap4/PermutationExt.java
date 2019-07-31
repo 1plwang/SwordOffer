@@ -27,6 +27,11 @@ public class PermutationExt {
         return list;
     }
 
+    /**
+     * 对数组中的数进行全排列
+     * @param array
+     * @return
+     */
     public List<int[]> permutation(int[] array) {
         List<int[]> list = new ArrayList<>();
         collect(array, 0, list);
@@ -82,8 +87,10 @@ public class PermutationExt {
 
     public static void main(String[] args) {
         PermutationExt p = new PermutationExt();
-        int[] a = {8, 3, 5, 4, 1, 2, 5, 6};
-        List<int[]> list = p.possibilitiesOfCube(a);
+//        int[] a = {8, 3, 5, 4, 1, 2, 5, 6};
+//        List<int[]> list = p.possibilitiesOfCube(a);
+        int[] a = {1,2,3};
+        List<int[]> list = p.permutation(a);
         System.out.println("有" + list.size() + "种可能");
         for (int[] arr : list) {
             System.out.println(Arrays.toString(arr));

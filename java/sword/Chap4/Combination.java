@@ -42,6 +42,13 @@ public class Combination {
         return list;
     }
 
+    /**
+     * 收集字符个数为i的组合
+     * @param str 源字符串
+     * @param sb
+     * @param number 字符 数量
+     * @param list 组合结果
+     */
     private void collect(String str, StringBuilder sb, int number, List<String> list) {
         // 两个if顺序不可交换，否则C(n, n)不会存入到list中：即collect("", sb, 0)时，要先判断num==0存入后，再判断str.length ==0决定不再递归
         if (number == 0) {

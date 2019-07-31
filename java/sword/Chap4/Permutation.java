@@ -16,7 +16,7 @@ public class Permutation {
            return list;
         }
 
-        collect(str.toCharArray(), 0, list);
+        collect(str.toCharArray(),0 , list);
         Collections.sort(list);
         return list;
     }

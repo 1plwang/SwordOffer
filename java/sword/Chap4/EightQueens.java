@@ -9,11 +9,14 @@ import java.util.List;
  */
 public class EightQueens {
     /**
-     * 1、保证不同行：使用一个数组表示不同行的皇后，八个皇后则int[] queens = new int[8]，其中queens[i]表示位于第i行的皇后，这保证了皇后不位于同一行
-     * 2、保证不同列：为queens[i]赋值各不相同的数值，queens[i] = j表示位于i行的皇后也位于j列，每个i赋予了不同的j值保证了不同行的皇后也不位于不同列
+     * 1、保证不同行：使用一个数组表示不同行的皇后，八个皇后则int[] queens = new int[8]，
+     * 其中queens[i]表示位于第i行的皇后，这保证了皇后不位于同一行
+     * 2、保证不同列：为queens[i]赋值各不相同的数值，queens[i] = j表示位于i行的皇后也位于j列，
+     * 每个i赋予了不同的j值保证了不同行的皇后也不位于不同列
      * 3、保证在同一条对角线：如果在同一条对角线，说明正方形的行数等于列数，即当j > i时:
-     * j - i == queens[j] -queens[i]（第j行的皇后在第i行的皇后右下方）；或者j - i == queens[i] -queens[j](第j行的皇后在第i行的皇后左下方)
-     * <p>
+     * j - i == queens[j] -queens[i]（第j行的皇后在第i行的皇后右下方）；
+     * 或者j - i == queens[i] -queens[j](第j行的皇后在第i行的皇后左下方)
+     * <p></p>
      * 这又是一个全排列的扩展问题，先求出所有的排列可能，从中排除不符合要求的摆放方法即可
      */
     public List<int[]> possibilitiesOfQueensPlaced() {

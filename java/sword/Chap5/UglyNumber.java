@@ -26,4 +26,8 @@ public class UglyNumber {
         }
         return res[index - 1];
     }
+    public static void main(String[] args) {
+        UglyNumber u = new UglyNumber();
+        System.out.println(u.uglyNumber(1500));
+    }
 }
